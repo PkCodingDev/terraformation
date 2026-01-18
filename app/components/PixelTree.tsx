@@ -46,8 +46,8 @@ export function PixelTree({ stage }: { stage: TreeStage }) {
   return (
     <div
       style={{
-        fontSize: 128,
-        margin: "32px 0",
+        fontSize: "clamp(80px, 20vw, 140px)",
+        margin: "clamp(16px, 2vh, 32px) 0",
         animation: "bounce 2s ease-in-out infinite",
         transform: `scale(${getScale()})`,
         transition: "transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)",
@@ -58,7 +58,8 @@ export function PixelTree({ stage }: { stage: TreeStage }) {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        minHeight: "160px",
+        minHeight: "clamp(100px, 25vh, 180px)",
+        maxWidth: "90vw",
       }}
     >
       {map[stage]}

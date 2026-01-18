@@ -6,9 +6,9 @@ export function ProgressBar({ progress }: { progress: number }) {
   return (
     <div
       style={{
-        width: 300,
-        margin: "20px auto",
-        padding: "12px",
+        width: "clamp(250px, 80vw, 320px)",
+        margin: "clamp(10px, 2vh, 20px) auto",
+        padding: "clamp(8px, 1.5vw, 12px)",
         background: "#5fbf3c",
         border: "4px solid #2e7d32",
         borderRadius: "0",
@@ -18,7 +18,7 @@ export function ProgressBar({ progress }: { progress: number }) {
     >
       <div
         style={{
-          height: 24,
+          height: "clamp(18px, 3vh, 24px)",
           background: "#c8e6c9",
           border: "2px solid #2e7d32",
           overflow: "hidden",
@@ -37,7 +37,7 @@ export function ProgressBar({ progress }: { progress: number }) {
       </div>
       <div
         style={{
-          fontSize: "0.7rem",
+          fontSize: "clamp(0.5rem, 1.5vw, 0.7rem)",
           marginTop: "8px",
           color: "#1f3b1f",
           fontWeight: "bold",

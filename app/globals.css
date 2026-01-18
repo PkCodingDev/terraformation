@@ -163,3 +163,33 @@ p {
     text-shadow: 0 0 20px rgba(124, 179, 66, 0.5);
   }
 }
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+
+  p {
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+  }
+
+  p {
+    font-size: 0.6rem;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}

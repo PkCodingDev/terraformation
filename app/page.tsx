@@ -47,62 +47,80 @@ export default function Home() {
   return (
     <main
       style={{
-        padding: 40,
+        padding: "clamp(20px, 5vw, 40px)",
         textAlign: "center",
         minHeight: "100vh",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+        maxWidth: "100vw",
+        overflow: "hidden",
       }}
     >
-      <h1>Terraformation</h1>
+      <h1
+        style={{ fontSize: "clamp(1.5rem, 5vw, 2.5rem)", margin: "0 0 10px 0" }}
+      >
+        🌍 Terraformation
+      </h1>
 
       <div
         style={{
-          marginBottom: 20,
-          marginTop: 20,
-          fontSize: "0.9rem",
+          marginBottom: "clamp(10px, 2vh, 20px)",
+          marginTop: "clamp(10px, 2vh, 20px)",
+          fontSize: "clamp(0.65rem, 2vw, 0.9rem)",
           opacity: 0.8,
         }}
       >
         <p>{trees} Trees Planted</p>
       </div>
 
-      <PixelTree stage={stage} />
+      <div
+        style={{
+          flex: 1,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          minHeight: "100px",
+        }}
+      >
+        <PixelTree stage={stage} />
+      </div>
 
       <ProgressBar progress={progress} />
 
-      <div style={{ marginTop: 20, fontSize: "0.7rem", opacity: 0.7 }}>
-        <p>Contract: BBSAW49Sru7jiSajWVKTSWs39psrjjHbMMtWGWTJBAGS</p>
-      </div>
-
       <div
         style={{
-          marginTop: 30,
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: "8px",
+          marginTop: "clamp(15px, 2vh, 20px)",
+          marginBottom: "clamp(15px, 1.5vh, 20px)",
+          fontSize: "clamp(0.55rem, 1.5vw, 0.7rem)",
+          opacity: 0.7,
         }}
       >
-        <span
-          style={{
-            fontSize: "1.5rem",
-            fontWeight: "bold",
-            color: "#1f3b1f",
-            textShadow: "2px 2px 0 rgba(255, 255, 255, 0.6)",
-          }}
-        >
-          𝕏
-        </span>
+        <p style={{ margin: 0, wordBreak: "break-all" }}>
+          Contract: BBSAW49Sru7jiSajWVKTSWs39psrjjHbMMtWGWTJBAGS
+        </p>
+      </div>
+
+      {/* Terra Button and Made by OxHimmel Section */}
+      <div
+        style={{
+          marginBottom: "clamp(60px, 12vh, 100px)",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: "clamp(15px, 2vh, 20px)",
+        }}
+      >
+        {/* Terra Button */}
         <a
           href="https://x.com/TF_Global"
           target="_blank"
           rel="noopener noreferrer"
           style={{
-            padding: "8px 16px",
-            fontSize: "0.7rem",
+            padding: "clamp(12px, 3vw, 17px) clamp(24px, 4.8vw, 34px)",
+            fontSize: "clamp(0.8rem, 2.4vw, 1.14rem)",
             background: "rgba(255, 255, 255, 0.1)",
             border: "3px solid #1f3b1f",
             color: "#1f3b1f",
@@ -130,39 +148,33 @@ export default function Home() {
         >
           Terra
         </a>
-      </div>
 
-      <AudioManager ref={audioManagerRef} />
-
-      {/* Made by credit */}
-      <div
-        style={{
-          position: "fixed",
-          bottom: 80,
-          left: 20,
-          fontSize: "0.65rem",
-          opacity: 0.6,
-        }}
-      >
+        {/* Made by OxHimmel */}
         <a
           href="https://x.com/0xHimmel_"
           target="_blank"
           rel="noopener noreferrer"
           style={{
-            color: "#000000ff",
+            fontSize: "clamp(0.5rem, 1.2vw, 0.65rem)",
+            color: "#1f3b1f",
             textDecoration: "none",
             borderBottom: "1px solid #7cb342",
+            opacity: 0.7,
+            transition: "opacity 0.2s",
+            fontFamily: "Press Start 2P",
           }}
           onMouseEnter={(e) => {
             (e.target as HTMLElement).style.opacity = "1";
           }}
           onMouseLeave={(e) => {
-            (e.target as HTMLElement).style.opacity = "0.6";
+            (e.target as HTMLElement).style.opacity = "0.7";
           }}
         >
           Made by OxHimmel
         </a>
       </div>
+
+      <AudioManager ref={audioManagerRef} />
     </main>
   );
 }
